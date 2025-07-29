@@ -1,0 +1,13 @@
+Sum of elements of each tuple stored inside the list
+l = [(1,2,3),(4,5,6)]
+m=[]
+for i in l:
+    d=sum(i)
+    m.append(d)
+    print(m)
+
+OUTPUT:
+[6]
+[6,15]
+
+
