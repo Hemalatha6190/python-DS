@@ -1,0 +1,48 @@
+Polynomial Manipulation 
+
+class Polynomial:
+def __init__(self,coeffs):
+self.coeffs=coeffs
+def evaluate(self,x):
+result=0
+forexp,coeff in self.coeffs.items():
+result+= coeff*(x**exp)
+return result
+def __add__(self,other):
+result_coeffs={}
+forexp,coeff in self.coeffs.items():
+result_coeffs[exp]=coeff
+forexp,coeff in other.coeffs.items():
+result_coeffs[exp]= result_coeffs.get(exp,0)+ coeff
+return Polynomial(result_coeffs)
+def  __str__(self):
+terms=[]
+forexp,coeff in self.coeffs.items():
+ifexp==0:
+term=str(coeff)
+elifexp==1:
+                term= f"{coeff}x"
+else:
+                term= f"{coeff}x^{exp}"
+terms.append(term)
+return "+".join(terms)
+p1=Polynomial({2:3,1:2,0:5})
+p2=Polynomial({2:2,1:-1,0:3})
+print("Polynomial 1 : ", p1)
+print("Polynomial 2 : ",p2)
+sum_poly= p1+p2
+print("Sum : ", sum_poly)
+x_val=2
+print(f"Evaluating at x = {x_val}:")
+print("Poly 1 : ",p1.evaluate(x_val))
+print("Poly 2 : ",p2.evaluate(x_val))
+print("Sum : ",sum_poly.evaluate(x_val))
+
+     Output:
+Polynomial 1 :  3x^2+2x+5
+Polynomial 2 :  2x^2+-1x+3
+Sum :  5x^2+1x+8
+Evaluating at x = 2:
+Poly 1 :  21
+Poly 2 :  9
+Sum :  30
