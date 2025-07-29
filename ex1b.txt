@@ -1,0 +1,12 @@
+Combination of letters
+
+d={"A":["a","b"],"B":["c","d"]}
+for i in d["A"]:
+    for j in d["B"]:
+        print(i+j)
+OUTPUT
+ac
+ad
+bc
+bd
+
